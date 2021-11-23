@@ -9,5 +9,4 @@ public class FindDivisor {
         }
         return count;
     }
-
 }
