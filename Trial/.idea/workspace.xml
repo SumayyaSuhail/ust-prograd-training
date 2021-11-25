@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="533e0564-db29-4856-b5e3-911dfcc498b3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Day-4/Inheritance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day-4/Inheritance.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day-4/src/Inheritance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
