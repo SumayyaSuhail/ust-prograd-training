@@ -1,4 +1,4 @@
-public class Cube{
+public class Cube {
     private int side;
     public void setSide(int side) {
         this.side = side;

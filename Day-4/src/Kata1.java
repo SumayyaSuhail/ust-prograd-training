@@ -1,5 +1,4 @@
-public class Kata {
-
+public class Kata1 {
     public static String high(String s) {
         String[] words = s.split("\\s");
         int[] scores = new int[words.length];
@@ -19,5 +18,4 @@ public class Kata {
         }
         return words[highestindex];
     }
-
 }

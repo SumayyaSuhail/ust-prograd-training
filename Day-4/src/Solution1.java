@@ -1,4 +1,4 @@
-class Solution {
+public class Solution1 {
     public static String whoLikesIt(String... names) {
         String str = "";
         if(names.length==0){
