@@ -29,8 +29,9 @@ public class SquareTest {
             });
         }
     }
+
     @Nested
-    class SquarePerimeterTest{
+    class SquarePerimeterTest {
         @Test
         public void perimeterOfSideTwo() {
             Square perimeter = new Square(2);

@@ -1,37 +1,40 @@
 public class Rectangle {
     private double length, breadth;
-    public Rectangle(double length, double breadth){
+
+    public Rectangle(double length, double breadth) {
         setLength(length);
         setBreadth(breadth);
     }
+
     public double getLength() {
         return length;
     }
 
     public void setLength(double length) {
-        if(length>0) {
+        if (length > 0) {
             this.length = length;
-        }
-        else{
+        } else {
             throw new IllegalArgumentException("Length should be greater than zero");
         }
     }
 
-    public double getBreadth() { return breadth;}
+    public double getBreadth() {
+        return breadth;
+    }
 
     public void setBreadth(double breadth) {
-        if(breadth>0) {
+        if (breadth > 0) {
             this.breadth = breadth;
-        }
-        else{
+        } else {
             throw new IllegalArgumentException("Breadth should be greater than zero");
         }
     }
 
-    public double area()  {
+    public double area() {
         return getLength() * getBreadth();
     }
-    public double perimeter(){
-        return 2*(getLength() + getBreadth());
+
+    public double perimeter() {
+        return 2 * (getLength() + getBreadth());
     }
 }

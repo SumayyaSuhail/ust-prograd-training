@@ -6,6 +6,7 @@ public class RectangleTest {
     @Nested
     class RectangleAreaTest {
         private Rectangle area;
+
         @Test
         public void areaOfFourAndTwoIsEight() {
             area = new Rectangle(4, 2);
@@ -31,16 +32,19 @@ public class RectangleTest {
             );
         }
     }
+
     @Nested
-    class RectanglePerimeterTest{
+    class RectanglePerimeterTest {
         private Rectangle perimeter;
+
         @Test
-        public void perimeterOfFourAndTwoIsTwelve(){
-            perimeter = new Rectangle(4,2);
+        public void perimeterOfFourAndTwoIsTwelve() {
+            perimeter = new Rectangle(4, 2);
             double answer = perimeter.perimeter();
             double expected = 12;
-            Assertions.assertEquals(answer,expected);
+            Assertions.assertEquals(answer, expected);
         }
+
         @Test
         public void perimeterOfSixAndThreeIsEighteen() {
             perimeter = new Rectangle(6, 3);
