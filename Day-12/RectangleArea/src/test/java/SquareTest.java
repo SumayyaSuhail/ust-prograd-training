@@ -7,8 +7,8 @@ public class SquareTest {
     class SquareAreaTest {
         @Test
         public void areaOfSideTwo() {
-            AreaAndPerimeter area = new AreaAndPerimeter(2);
-            double answer = area.areaOfSquare();
+            Square area = new Square(2);
+            double answer = area.area();
             double expected = 4;
             Assertions.assertEquals(answer, expected);
         }
@@ -16,16 +16,16 @@ public class SquareTest {
         @Test
         public void areaOfSideZero() {
             Assertions.assertThrows(IllegalArgumentException.class, () -> {
-                AreaAndPerimeter area = new AreaAndPerimeter(0);
-                area.areaOfSquare();
+                Square area = new Square(0);
+                area.area();
             });
         }
 
         @Test
         public void areaOfSideNegThree() {
             Assertions.assertThrows(IllegalArgumentException.class, () -> {
-                AreaAndPerimeter area = new AreaAndPerimeter(0);
-                area.areaOfSquare();
+                Square area = new Square(0);
+                area.area();
             });
         }
     }
@@ -33,8 +33,8 @@ public class SquareTest {
     class SquarePerimeterTest{
         @Test
         public void perimeterOfSideTwo() {
-            AreaAndPerimeter perimeter = new AreaAndPerimeter(2);
-            double answer = perimeter.perimeterOfSquare();
+            Square perimeter = new Square(2);
+            double answer = perimeter.perimeter();
             double expected = 8;
             Assertions.assertEquals(answer, expected);
         }
@@ -42,16 +42,16 @@ public class SquareTest {
         @Test
         public void perimeterOfSideZero() {
             Assertions.assertThrows(IllegalArgumentException.class, () -> {
-                AreaAndPerimeter perimeter = new AreaAndPerimeter(0);
-                perimeter.perimeterOfSquare();
+                Square perimeter = new Square(0);
+                perimeter.perimeter();
             });
         }
 
         @Test
         public void perimeterOfSideNegThree() {
             Assertions.assertThrows(IllegalArgumentException.class, () -> {
-                AreaAndPerimeter perimeter = new AreaAndPerimeter(0);
-                perimeter.perimeterOfSquare();
+                Square perimeter = new Square(0);
+                perimeter.perimeter();
             });
         }
     }
