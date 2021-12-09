@@ -9,6 +9,11 @@
       <sourceFolder url="file://$MODULE_DIR$/Day-5/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Day-6/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Day-10/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Day-11/TDD/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Day-11/TDD/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/Day-11/learningTDD/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Day-11/learningTDD/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/Day-11/learningTDD/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/Day-7/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Day-8/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Day-9/src" isTestSource="false" />
