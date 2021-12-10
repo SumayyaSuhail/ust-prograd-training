@@ -1,4 +1,4 @@
-public class Convertor {
+public class LengthConvertor {
 
     public double unitConvertor(double measurement, String fromUnit, String toUnit) {
 

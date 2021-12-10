@@ -3,31 +3,31 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ConvertorTest {
-    private Convertor convertor;
+public class LengthConvertorTest {
+    private LengthConvertor lengthConvertor;
 
     @BeforeEach
     public void setup() {
-        convertor = new Convertor();
+        lengthConvertor = new LengthConvertor();
     }
 
     @Test
     public void checkForOneCentimeterIsOneCentimeter() {
-        double actualMeasurement = convertor.unitConvertor(1, "cm", "cm");
+        double actualMeasurement = lengthConvertor.unitConvertor(1, "cm", "cm");
         double expectedMeasurement = 1;
         assertEquals(expectedMeasurement, actualMeasurement);
     }
 
     @Test
     public void checkForOneMeterIsHundredCentimeters() {
-        double actualMeasurement = convertor.unitConvertor(1, "m", "cm");
+        double actualMeasurement = lengthConvertor.unitConvertor(1, "m", "cm");
         double expectedMeasurement = 100;
         assertEquals(expectedMeasurement, actualMeasurement);
     }
 
     @Test
     public void checkForHundredCentimeterIsZeroPointZeroZeroOneKilometers() {
-        double actualMeasurement = convertor.unitConvertor(100, "cm", "km");
+        double actualMeasurement = lengthConvertor.unitConvertor(100, "cm", "km");
         double expectedMeasurement = 0.001;
         assertEquals(expectedMeasurement, actualMeasurement);
     }
@@ -35,7 +35,7 @@ public class ConvertorTest {
     @Test
     public void throwsExceptionWhenMeasurementIsLessThanOrEqualToZero() {
         assertThrows(IllegalArgumentException.class, () -> {
-            convertor.unitConvertor(-1, "cm", "cm");
+            lengthConvertor.unitConvertor(-1, "cm", "cm");
         });
     }
 
@@ -43,7 +43,7 @@ public class ConvertorTest {
     @Test
     public void throwsExceptionWhenUnitIsMillimeter() {
         assertThrows(IllegalArgumentException.class, () -> {
-            convertor.unitConvertor(1, "mm", "mm");
+            lengthConvertor.unitConvertor(1, "mm", "mm");
         });
     }
 
@@ -51,7 +51,7 @@ public class ConvertorTest {
     @Test
     public void throwsExceptionWhenUnitIsInvalidUnit() {
         assertThrows(IllegalArgumentException.class, () -> {
-            convertor.unitConvertor(1, "km", "km");
+            lengthConvertor.unitConvertor(1, "km", "km");
         });
     }
 
