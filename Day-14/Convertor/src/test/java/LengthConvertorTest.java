@@ -13,21 +13,21 @@ public class LengthConvertorTest {
 
     @Test
     public void checkForOneCentimeterIsOneCentimeter() {
-        double actualMeasurement = lengthConvertor.unitConvertor(1, "cm", "cm");
+        double actualMeasurement = lengthConvertor.unitConvertor(1, "centi", "centi");
         double expectedMeasurement = 1;
         assertEquals(expectedMeasurement, actualMeasurement);
     }
 
     @Test
     public void checkForOneMeterIsHundredCentimeters() {
-        double actualMeasurement = lengthConvertor.unitConvertor(1, "m", "cm");
+        double actualMeasurement = lengthConvertor.unitConvertor(1, "base", "centi");
         double expectedMeasurement = 100;
         assertEquals(expectedMeasurement, actualMeasurement);
     }
 
     @Test
     public void checkForHundredCentimeterIsZeroPointZeroZeroOneKilometers() {
-        double actualMeasurement = lengthConvertor.unitConvertor(100, "cm", "km");
+        double actualMeasurement = lengthConvertor.unitConvertor(100, "centi", "kilo");
         double expectedMeasurement = 0.001;
         assertEquals(expectedMeasurement, actualMeasurement);
     }
@@ -35,7 +35,7 @@ public class LengthConvertorTest {
     @Test
     public void throwsExceptionWhenMeasurementIsLessThanOrEqualToZero() {
         assertThrows(IllegalArgumentException.class, () -> {
-            lengthConvertor.unitConvertor(-1, "cm", "cm");
+            lengthConvertor.unitConvertor(-1, "centi", "centi");
         });
     }
 
@@ -43,7 +43,7 @@ public class LengthConvertorTest {
     @Test
     public void throwsExceptionWhenUnitIsMillimeter() {
         assertThrows(IllegalArgumentException.class, () -> {
-            lengthConvertor.unitConvertor(1, "mm", "mm");
+            lengthConvertor.unitConvertor(1, "milli", "milli");
         });
     }
 
@@ -51,7 +51,7 @@ public class LengthConvertorTest {
     @Test
     public void throwsExceptionWhenUnitIsInvalidUnit() {
         assertThrows(IllegalArgumentException.class, () -> {
-            lengthConvertor.unitConvertor(1, "km", "km");
+            lengthConvertor.unitConvertor(1, "kilo", "kilo");
         });
     }
 

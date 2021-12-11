@@ -1,4 +1,4 @@
-public class UnitCalculator extends LengthConvertor {
+public class LengthCalculator extends LengthConvertor {
     public double addUnits(double firstMeasure, String firstUnit, double secondMeasure, String secondUnit, String expectedUnit) {
         if (firstUnit.equals(expectedUnit)) {
             double convertedMeasure = unitConvertor(secondMeasure, secondUnit, firstUnit);
