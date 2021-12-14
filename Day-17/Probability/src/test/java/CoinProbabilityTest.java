@@ -20,7 +20,7 @@ public class CoinProbabilityTest {
         public void probabilityOfHeadAndTailInSingleTossIsEqual() {
             double answer = coinProbability.singleToss("H");
             double expectedAnswer = coinProbability.singleToss("T");
-            assertEquals(answer, expectedAnswer);
+            assertEquals(answer,expectedAnswer);
         }
 
         @DisplayName("Probability of an event not occurring")

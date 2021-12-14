@@ -3,14 +3,14 @@ public class CoinProbability {
     String[] singleToss = {"H", "T"};
 
     public double singleToss(String coinFace) {
-        int count = 0;
         if (coinFace == "H" || coinFace == "T") {
+            int count=0;
             for (int i = 0; i < singleToss.length; i++) {
                 if (singleToss[i] == coinFace) {
-                    count++;
+                    count=count+1;
                 }
             }
-            return count / singleToss.length;
+            return count/singleToss.length;
         } else
             throw new IllegalArgumentException("Not a valid Output");
     }
