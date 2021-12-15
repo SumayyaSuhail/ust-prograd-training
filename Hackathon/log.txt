@@ -1,0 +1,1 @@
+Program Started	User selected USD	User entered amount 20.0	User selected INR	User selected Quit	User selected INR	User entered amount 1500.0	User selected SAR	User selected Quit	User selected Quit	Program Started	User selected INR	User entered amount 1500.0	User selected SAR	User selected Quit	User selected Quit	
