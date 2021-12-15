@@ -231,6 +231,7 @@ public class CurrencyConvertor {
                                 break;
                             case "Quit":
                                 System.out.println("\n**Exiting User Page**");
+                                fileWriter.write("Program Ended\n");
                                 break;
                             default:
                                 throw new IllegalArgumentException("Invalid Choice");
