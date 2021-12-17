@@ -1,15 +1,16 @@
-public class CurrencyConvertor {
+public class Wallet {
     private double walletAmount;
-    public void addDollarInputToWallet(double inputDollars){
+
+    public void depositDollarAmountToWallet(double inputDollars){
         walletAmount=walletAmount+dollarToRupees(inputDollars);
     }
-    public void addRupeesInputToWallet(double inputRupees){
+    public void depositRupeesAmountToWallet(double inputRupees){
         walletAmount=walletAmount+inputRupees;
     }
-    public void subtractRupeesInputFromWallet(double inputRupees){
+    public void withdrawRupeesAmountFromWallet(double inputRupees){
         walletAmount=walletAmount-inputRupees;
     }
-    public void subtractDollarInputFromWallet(double inputDollars){
+    public void withdrawDollarAmountFromWallet(double inputDollars){
         walletAmount=walletAmount-dollarToRupees(inputDollars);
     }
 

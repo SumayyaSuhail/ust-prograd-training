@@ -3,11 +3,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class CurrencyConvertorTest {
-    private CurrencyConvertor convertor;
+public class WalletTest {
+    private Wallet convertor;
     @BeforeEach
     public void setUp(){
-        convertor=new CurrencyConvertor();
+        convertor=new Wallet();
     }
     @Test
     public void checkSeventyFourPointEightFiveIsOneDollar(){
@@ -17,26 +17,25 @@ public class CurrencyConvertorTest {
     }
     @Test
     public void getWalletBalanceInRupees(){
-        convertor.addDollarInputToWallet(1);
-        convertor.addRupeesInputToWallet(50);
-        convertor.subtractRupeesInputFromWallet(50);
+        convertor.depositDollarAmountToWallet(1);
+        convertor.depositRupeesAmountToWallet(50);
+        convertor.withdrawRupeesAmountFromWallet(50);
         double answer = convertor.getWalletAmount("Rs");
         double expectedAnswer = 74.85;
         assertEquals(answer, expectedAnswer);
     }
     @Test
     public void getWalletBalanceInDollars(){
-        convertor.addRupeesInputToWallet(74.85);
-        convertor.addDollarInputToWallet(1);
-        convertor.addRupeesInputToWallet(149.7);
+        convertor.depositRupeesAmountToWallet(74.85);
+        convertor.depositDollarAmountToWallet(1);
+        convertor.depositRupeesAmountToWallet(149.7);
         double answer = convertor.getWalletAmount("$");
         double expectedAnswer = 4;
         assertEquals(answer, expectedAnswer);
     }
     @Test
     public void getWalletBalanceInEuros(){
-        double expectedAnswer = 4;
-        assertThrows(IllegalArgumentException.class,()->{convertor.addDollarInputToWallet(1);
-            double answer = convertor.getWalletAmount("euro");});
+        assertThrows(IllegalArgumentException.class,()->{convertor.depositDollarAmountToWallet(1);
+            convertor.getWalletAmount("euro");});
     }
 }
