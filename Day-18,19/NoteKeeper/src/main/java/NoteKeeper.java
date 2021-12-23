@@ -17,7 +17,6 @@ public class NoteKeeper {
         return items;
     }
     public ArrayList<String> removeFromMyNote(String item){
-        MyNote note = new MyNote();
         for (int i = 0; i <myNote.size() ; i++) {
             if(myNote.get(i).item.equals(item)){
                 tempNote.add(myNote.get(i));
@@ -26,18 +25,16 @@ public class NoteKeeper {
         }
         return getMyNote();
     }
-    public ArrayList unremoveFromMyNote(){
+    public ArrayList<String> unremoveFromMyNote(){
         myNote.addAll(tempNote);
         return getMyNote();
     }
-    public ArrayList<String> setStatus(String item1){
-        MyNote note = new MyNote();
-        for (int i = 0; i <myNote.size() ; i++) {
-            if(myNote.get(i).item.equals(item1)){
-                myNote.get(i).status="Completed";
+    public void setStatus(String item1){
+        for (MyNote value : myNote) {
+            if (value.item.equals(item1)) {
+                value.status = "Completed";
             }
         }
-        return getMyNote();
     }
     public ArrayList<String> getStatus(){
         ArrayList<String> statusList= new ArrayList<>();
