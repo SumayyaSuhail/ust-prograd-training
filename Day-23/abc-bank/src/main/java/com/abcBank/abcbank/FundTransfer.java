@@ -9,7 +9,7 @@ public class FundTransfer {
     ArrayList<String> transferList = new ArrayList<>();
 
     public void storeTransferDetails(String fromAccount, String toAccount, double transferAmount) {
-        String transferDetails = "From " + fromAccount + "; to " + toAccount + "; AmountTransferred=" + transferAmount;
+        String transferDetails = "From Customer" + fromAccount + "; to Customer" + toAccount + "; AmountTransferred=" + transferAmount;
         transferList.add(transferDetails);
     }
     public void displayList(){
