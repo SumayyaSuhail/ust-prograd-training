@@ -10,7 +10,7 @@ public class Customer {
     long phoneNumber;
     double accountBalance;
 
-    public void addCustomerAccount(String accountId, String customerName, long phoneNumber, double accountBalance) {
+    public void addCustomerAccount(String accountId, String customerName, int phoneNumber, double accountBalance) {
         this.accountId = accountId;
         this.customerName = customerName;
         this.phoneNumber = phoneNumber;

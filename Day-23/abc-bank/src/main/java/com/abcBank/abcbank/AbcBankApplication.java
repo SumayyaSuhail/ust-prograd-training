@@ -15,14 +15,14 @@ public class AbcBankApplication {
         Account account=context.getBean(Account.class);
 
         customer1.addCustomerAccount("1","Sumayya",123,5000);
-        System.out.println(account.getAccount(customer1));
+//        System.out.println(account.getAccount(customer1));
 
         customer2.addCustomerAccount("2","Suhail",456,10000);
-        System.out.println(account.getAccount(customer2));
+//        System.out.println(account.getAccount(customer2));
 
-        System.out.println(account.makeTransfer(customer1,customer2,2000));
-        System.out.println(account.makeTransfer(customer2,customer1,110000));
-        account.getTransferDetails();
+//        System.out.println(account.makeTransfer(customer1,customer2,2000));
+//        System.out.println(account.makeTransfer(customer2,customer1,110000));
+//        account.getTransferDetails();
     }
 
 }

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Validation</title>
+</head>
+<body style="background-color:teal;text-align:center;">
+    <h1> <span th:text="${validMessage}"  style="color:white;"/></h1>
+    <p> AccountId : <span th:text="${accountId}" style="color:white;"/> </p>
+    <p> Account Name : <span th:text="${accountName}" style="color:white;"/> </p>
+    <p> Phone Number : <span th:text="${phoneNumber}" style="color:white;"/> </p>
+    <p> Account Balance : <span th:text="${accountBalance}" style="color:white;"/> </p>
+</body>
+</html>
