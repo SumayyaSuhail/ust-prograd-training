@@ -8,34 +8,10 @@ import org.springframework.context.ApplicationContext;
 public class AbcBankApplication {
 
     public static void main(String[] args) {
-
-        ApplicationContext context = SpringApplication.run(AbcBankApplication.class, args);
-        Customer customer1 = context.getBean(Customer.class);
-        Customer customer2 = context.getBean(Customer.class);
-        Account account=context.getBean(Account.class);
-
-        customer1.addCustomerAccount("1","Sumayya",123,5000);
-//        System.out.println(account.getAccount(customer1));
-
-        customer2.addCustomerAccount("2","Suhail",456,10000);
-//        System.out.println(account.getAccount(customer2));
-
-//        System.out.println(account.makeTransfer(customer1,customer2,2000));
-//        System.out.println(account.makeTransfer(customer2,customer1,110000));
-//        account.getTransferDetails();
+        SpringApplication.run(AbcBankApplication.class, args);
     }
 
 }
-
-
-
-
-
-
-
-
-
-
 
 
 //    Create a Spring Boot application for ABC Bank. using this application, the customers of the bank
