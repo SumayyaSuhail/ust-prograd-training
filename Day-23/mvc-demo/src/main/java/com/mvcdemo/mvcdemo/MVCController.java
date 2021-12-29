@@ -2,6 +2,7 @@ package com.mvcdemo.mvcdemo;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -37,4 +38,26 @@ public class MVCController {
         model.addAttribute("rem", rem);
         return "result";
     }
+    @RequestMapping("/register")
+    public String register(){
+        return "register";
+    }
+    @PostMapping("/details")
+    public String details(HttpServletRequest request, Model model){
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String email = request.getParameter("email");
+        String address = request.getParameter("address");
+        model.addAttribute("username",username );
+        model.addAttribute("password", password);
+        model.addAttribute("email", email);
+        model.addAttribute("address", address);
+        return "details";
+    }
 }
+//data sent in urls
+// get ---> read
+//data sent in headers
+// post ---> create
+//put/patch---> update
+//delete ---> delete
