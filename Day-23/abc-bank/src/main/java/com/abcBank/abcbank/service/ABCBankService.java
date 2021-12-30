@@ -26,5 +26,8 @@ public class ABCBankService {
     public Account addAccount(Account account) {
         return accountRepo.save(account);
     }
+    public Account getAccountByCustomerId(Long customerId) {
+        return accountRepo.findByCustomerId(customerId);
+    }
 
 }

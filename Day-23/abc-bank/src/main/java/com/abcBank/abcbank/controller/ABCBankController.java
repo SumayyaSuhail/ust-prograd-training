@@ -6,6 +6,7 @@ import com.abcBank.abcbank.entity.Customer;
 import com.abcBank.abcbank.service.ABCBankService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -43,14 +44,21 @@ public class ABCBankController {
         return "login";
     }
 
-    @RequestMapping("/validate")
-    public String validate(HttpServletRequest request) {
+    @RequestMapping("/details")
+    public String validate(HttpServletRequest request, Model model) {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         Customer customer = service.getCustomerByEmailAndPassword(email, password);
         if (customer.getId().equals(null)) {
             return "login";
         }
-        return "validate";
+        model.addAttribute("customername", customer.getCustomerName());
+        model.addAttribute("email", customer.getEmail());
+        model.addAttribute("customeraddress", customer.getCustomerAddress());
+        model.addAttribute("phonenumber", customer.getPhoneNumber());
+        Long customerId = customer.getId();
+        Account account=service.getAccountByCustomerId(customerId);
+        model.addAttribute("accountbalance", account.getAccountBalance());
+        return "details";
     }
 }

@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Details</title>
 </head>
 <body>
-
+<p >
+    CustomerName = <span th:text="${customername}"/><br/><br/>
+ Email = <span th:text="${email}"/><br/><br/>
+Customer Address = <span th:text="${customeraddress}"/><br/><br/>
+ PhoneNumber = <span th:text="${phonenumber}"/><br/><br/>
+ AccountBalance = <span th:text="${accountbalance}"/><br/><br/></p>
 </body>
 </html>
