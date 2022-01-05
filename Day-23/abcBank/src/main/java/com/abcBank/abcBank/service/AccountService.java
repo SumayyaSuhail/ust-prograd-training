@@ -1,6 +1,7 @@
 package com.abcBank.abcBank.service;
 
 import com.abcBank.abcBank.entity.Account;
+import com.abcBank.abcBank.entity.Customer;
 import com.abcBank.abcBank.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,8 +15,8 @@ public class AccountService {
         return accountRepo.save(account);
     }
 
-    public Account getAccountByCustomerId(Long customerId) {
-        return accountRepo.findByCustomerId(customerId);
+    public Account getAccountByCustomerId(Customer customer) {
+        return accountRepo.findByCustomerId(customer);
     }
 
     public Account getAccountByAccountId(Long accountId) {

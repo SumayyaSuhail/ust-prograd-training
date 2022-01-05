@@ -14,23 +14,22 @@ public class Account {
     @Column(name = "accountholdername", nullable = false)
     private String accountHolderName;
     private Double accountBalance;
-    @Column(name = "customerid", nullable = false)
-    private Long customerId;
+    @OneToOne
+    private Customer customer;
     @Column(name = "bankname")
     private String bankName;
     private String IFSCCode;
     @Column(name = "branchname")
     private String branchName;
 
-
     public Account() {
 
     }
 
-    public Account(String accountHolderName, Double accountBalance, Long customerId, String bankName, String IFSCCode, String branchName) {
+    public Account(String accountHolderName, Double accountBalance, Customer customer, String bankName, String IFSCCode, String branchName) {
         this.accountHolderName = accountHolderName;
         this.accountBalance = accountBalance;
-        this.customerId = customerId;
+        this.customer=customer;
         this.bankName = bankName;
         this.IFSCCode = IFSCCode;
         this.branchName = branchName;
@@ -60,12 +59,12 @@ public class Account {
         this.accountBalance = accountBalance;
     }
 
-    public Long getCustomerId() {
-        return customerId;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public String getBankName() {

@@ -1,5 +1,6 @@
 package com.abcBank.abcBank.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -21,6 +22,9 @@ public class Customer {
     private String phoneNumber;
     @Column(nullable = false)
     private String password;
+    @JsonIgnore
+    @OneToOne
+    private Account account;
 
     public Customer() {
 
@@ -85,5 +89,13 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 }

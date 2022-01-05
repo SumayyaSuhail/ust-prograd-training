@@ -16,7 +16,7 @@ import java.util.Objects;
 @Controller
 public class ABCBankController {
     static String email, password;
-    static Long id;
+    static Customer defaultCustomer;
     @Autowired
     private AccountService accountService;
 
@@ -66,8 +66,8 @@ public class ABCBankController {
             String phone = request.getParameter("phoneNumber");
             Customer customer = new Customer(email, name, password, address, phone);
             customerService.saveCustomer(customer);
-            Long customerId = customerService.getCustomerByEmailAndPassword(email, password).getId();
-            Account account = new Account(name, 0.00, customerId, "ABC Bank", "ABC000510", address);
+            //Long customerId = customerService.getCustomerByEmailAndPassword(email, password).getId();
+            Account account = new Account(name, 0.00, customer, "ABC Bank", "ABC000510", address);
             accountService.saveAccount(account);
             return "login";
         }
@@ -87,8 +87,7 @@ public class ABCBankController {
     @RequestMapping("/accountDetails")
     public String accountDetailsDisplay(Model model) {
         Customer customer = customerService.getCustomerByEmailAndPassword(email, password);
-        Long customerId = customer.getId();
-        Account account = accountService.getAccountByCustomerId(customerId);
+        Account account = accountService.getAccountByCustomerId(customer);
         model.addAttribute("accountId", account.getId());
         model.addAttribute("accountBalance", account.getAccountBalance());
         model.addAttribute("bankName", account.getBankName());
@@ -108,7 +107,7 @@ public class ABCBankController {
         if (!(Objects.isNull(customer))) {
             email = request.getParameter("email");
             password = request.getParameter("password");
-            id = customer.getId();
+            defaultCustomer = customer;
 
             return "home";
         } else {
@@ -124,7 +123,7 @@ public class ABCBankController {
 
     @PostMapping("/transfer")
     public String afterTransfer(HttpServletRequest request, Model model) {
-        Account myAccount = accountService.getAccountByCustomerId(id);
+        Account myAccount = accountService.getAccountByCustomerId(defaultCustomer);
         Double transferAmount = Double.parseDouble(request.getParameter("amount"));
         if(!(myAccount.getAccountBalance()>=transferAmount)){
             model.addAttribute("message", "Insufficient Balance!!!");
@@ -161,7 +160,7 @@ public class ABCBankController {
             return "deposit";
         }
         else{
-            Account myAccount = accountService.getAccountByCustomerId(id);
+            Account myAccount = accountService.getAccountByCustomerId(defaultCustomer);
             Double newBalance = (myAccount.getAccountBalance()) + Double.parseDouble(request.getParameter("deposit"));
             myAccount.setAccountBalance(newBalance);
             accountService.saveAccount(myAccount);
@@ -174,4 +173,5 @@ public class ABCBankController {
     public String home() {
         return "home";
     }
+
 }
