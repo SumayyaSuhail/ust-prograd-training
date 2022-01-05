@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Transfer</title>
+    <style>
+   body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input[type=number]{
+width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color:rgb(22, 44, 56);
+  color: white;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.btn btn-success {
+  width: auto;
+  padding: 10px 18px;
+}
+
+.h2{
+    text-align: left;
+  margin: 24px 0 12px 0;
+}
+
+.submit-area {
+	padding: 16px;
+	margin-left:30%;
+	margin-right:30%;
+}
+
+.mt-3{
+text-align: center;
+color: red;
+}
+
+.mt-4{
+text-align: center;
+color: green;
+}
+  </style>
+</head>
+<body>
+<form action="/transfer" method="post">
+    <div class="mt-3">
+     <span class="text-center text-danger">
+        <div th:text="${message}"/>
+    </span>
+    </div>
+    <div class="mt-4">
+     <span class="text-center text-success">
+         <div th:text="${successMessage}"/>
+    </span>
+    </div>
+    <div class="submit-area">
+        <h2>Transfer Amount</h2>
+        <label for="amount"><b>Amount</b></label><br/>
+        <input name="amount" id="amount" type="number" class="form-control" placeholder="Enter transfer amount"><br>
+
+        <label for="toAccount"><b>To Account</b></label><br/>
+        <input name="toAccount" id="toAccount" type="number" class="form-control" placeholder="Enter to account"><br>
+        <button id="transfer-btn" class="btn btn-success">Transfer</button>
+    </div>
+</form>
+
+</body>
+</html>

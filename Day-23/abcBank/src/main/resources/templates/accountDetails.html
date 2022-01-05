@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  background-color: white;
+  margin-left:30%;
+  margin-right:30%;
+}
+
+p{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background: #f1f1f1;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=email], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.backbtn {
+  background-color:rgb(22, 44, 56);
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.backbtn:hover {
+  opacity: 1;
+}
+
+.mt-3{
+text-align: center;
+color: red;
+}
+
+
+    </style>
+</head>
+<body>
+<form action="/home">
+    <div class="container">
+        <h1>Account Details</h1>
+        <label for="accountId"><b>Account Id</b></label>
+        <p><span th:text="${accountId}" id="accountId"></span></p>
+
+        <label for="accountBalance"><b>Account Balance</b></label>
+        <p><span th:text="${accountBalance}" id="accountBalance"></span></p>
+
+        <label for="bankName"><b>Bank Name</b></label>
+        <p><span th:text="${bankName}" id="bankName"></span></p>
+
+        <label for="bankBranch"><b>Bank Branch</b></label><br/>
+        <p><span th:text="${bankBranch}" id="bankBranch"></span></p>
+
+        <label for="ifscCode"><b>IFSC Code</b></label>
+        <p><span th:text="${ifscCode}" id="ifscCode"></span></p>
+
+        <button type="submit" class="backbtn">Back</button>
+    </div>
+</form>
+</body>
+</html>
