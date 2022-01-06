@@ -1,10 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Update Details</title>
+    <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  background-color: white;
+  margin-left:30%;
+  margin-right:30%;
+}
+
+p{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background: #f1f1f1;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=email], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.updatebtn {
+  background-color:rgb(22, 44, 56);
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.updatebtn:hover {
+  opacity: 1;
+}
+
+.mt-3{
+text-align: center;
+color: red;
+}
+    </style>
 </head>
 <body>
+<form action="/userDetails" method="post">
+    <div class="container">
+        <h1>Update Details</h1>
+        <label for="name"><b>UserName</b></label>
+        <input type="text" name="name" id="name" th:value="${name}"/>
 
+        <label for="email"><b>Email</b></label>
+        <input type="text" name="email" id="email" th:value="${email}" disabled/>
+
+        <label for="address"><b>Address</b></label>
+        <input type="text" name="address" id="address" th:value="${address}"/>
+
+        <label for="phone"><b>Phone Number</b></label><br/>
+        <input type="text" name="phone" id="phone" th:value="${phone}"/>
+
+        <button type="submit" class="updatebtn">Update</button>
+    </div>
+</form>
 </body>
 </html>

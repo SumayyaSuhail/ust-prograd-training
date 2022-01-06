@@ -52,7 +52,7 @@ hr {
 }
 
 /* Set a style for the submit button */
-.backbtn {
+.editbtn {
   background-color:rgb(22, 44, 56);
   color: white;
   padding: 16px 20px;
@@ -63,7 +63,7 @@ hr {
   opacity: 0.9;
 }
 
-.backbtn:hover {
+.editbtn:hover {
   opacity: 1;
 }
 
@@ -76,7 +76,7 @@ color: red;
     </style>
 </head>
 <body>
-<form action="/home">
+<form action="/updateDetails">
     <div class="container">
         <h1>My Details</h1>
         <label for="name"><b>UserName</b></label>
@@ -91,7 +91,7 @@ color: red;
         <label for="phone"><b>Phone Number</b></label><br/>
         <p><span th:text="${phone}" id="phone"></span></p>
 
-        <button type="submit" class="updatebtn">Update</button>
+        <button type="submit" class="editbtn">Edit</button>
     </div>
 </form>
 </body>

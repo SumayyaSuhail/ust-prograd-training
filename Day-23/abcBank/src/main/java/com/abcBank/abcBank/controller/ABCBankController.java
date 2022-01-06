@@ -84,6 +84,30 @@ public class ABCBankController {
 
     }
 
+    @RequestMapping("/updateDetails")
+    public String editDetails(Model model){
+        Customer customer=customerService.getCustomerByEmail(email);
+        model.addAttribute("name",customer.getCustomerName());
+        model.addAttribute("email", customer.getEmail());
+        model.addAttribute("address", customer.getCustomerAddress());
+        model.addAttribute("phone", customer.getPhoneNumber());
+        return "updateDetails";
+    }
+
+    @PostMapping("/userDetails")
+    public String afterUpdate(HttpServletRequest request, Model model){
+        Customer customer=customerService.getCustomerByEmail(email);
+        customer.setCustomerName(request.getParameter("name"));
+        customer.setCustomerAddress(request.getParameter("address"));
+        customer.setPhoneNumber(request.getParameter("phone"));
+        customerService.saveCustomer(customer);
+        model.addAttribute("name", customer.getCustomerName());
+        model.addAttribute("email", customer.getEmail());
+        model.addAttribute("address", customer.getCustomerAddress());
+        model.addAttribute("phone", customer.getPhoneNumber());
+        return "userDetails";
+    }
+
     @RequestMapping("/accountDetails")
     public String accountDetailsDisplay(Model model) {
         Customer customer = customerService.getCustomerByEmailAndPassword(email, password);
