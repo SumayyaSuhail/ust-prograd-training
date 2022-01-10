@@ -43,6 +43,11 @@ text-align: center;
 color: red;
 }
 
+.mt-4{
+text-align: center;
+color: green;
+}
+
 .imgcontainer {
   text-align: center;
   margin: 24px 0 12px 0;
@@ -69,7 +74,7 @@ span.psw {
   padding-top: 16px;
 }
 
-/* Change styles for span and cancel button on extra small screens */
+/* Change styles for span and cancel button on tiny screens */
 @media screen and (max-width: 300px) {
   span.psw {
      display: block;
@@ -85,6 +90,11 @@ span.psw {
     <div class="mt-3">
      <span class="text-center text-danger">
         <div th:text="${message}"/>
+    </span>
+    </div>
+    <div class="mt-4">
+     <span class="text-center text-success">
+         <div th:text="${successMessage}"/>
     </span>
     </div>
     <form action="/home" method="post">
@@ -109,7 +119,7 @@ span.psw {
     <form action="/register">
         <div class="container" style="background-color:#f1f1f1">
             <button type="submit" class="registerbtn">Register</button>
-            <span class="psw"><a href="/forgotpassword">Forgot password?</a></span>
+            <span class="psw"><a href="/forgotPassword">Forgot password?</a></span>
         </div>
     </form>
 </div>

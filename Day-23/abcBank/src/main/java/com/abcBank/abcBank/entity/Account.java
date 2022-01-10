@@ -13,12 +13,14 @@ public class Account {
     private Long accountId;
     @Column(name = "accountholdername", nullable = false)
     private String accountHolderName;
+    @Column(name = "accountbalance")
     private Double accountBalance;
     @OneToOne
     private Customer customer;
     @Column(name = "bankname")
     private String bankName;
-    private String IFSCCode;
+    @Column(name = "ifsccode")
+    private String ifscCode;
     @Column(name = "branchname")
     private String branchName;
 
@@ -26,12 +28,12 @@ public class Account {
 
     }
 
-    public Account(String accountHolderName, Double accountBalance, Customer customer, String bankName, String IFSCCode, String branchName) {
+    public Account(String accountHolderName, Double accountBalance, Customer customer, String bankName, String ifscCode, String branchName) {
         this.accountHolderName = accountHolderName;
         this.accountBalance = accountBalance;
         this.customer=customer;
         this.bankName = bankName;
-        this.IFSCCode = IFSCCode;
+        this.ifscCode = ifscCode;
         this.branchName = branchName;
     }
 
@@ -76,11 +78,11 @@ public class Account {
     }
 
     public String getIFSCCode() {
-        return IFSCCode;
+        return ifscCode;
     }
 
     public void setIFSCCode(String IFSCCode) {
-        this.IFSCCode = IFSCCode;
+        this.ifscCode = IFSCCode;
     }
 
     public String getBranchName() {

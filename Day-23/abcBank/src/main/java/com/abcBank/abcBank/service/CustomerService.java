@@ -8,16 +8,33 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomerService {
     @Autowired
-    private CustomerRepository customerRepo;
+    private CustomerRepository customerRepository;
 
+    /**
+     * Method to save customer
+     * @param customer
+     * @return customer
+     */
     public Customer saveCustomer(Customer customer) {
-        return customerRepo.save(customer);
+        return customerRepository.save(customer);
     }
 
+    /**
+     * Method to find customer by email and password
+     * @param email
+     * @param password
+     * @return customer
+     */
     public Customer getCustomerByEmailAndPassword(String email, String password) {
-        return customerRepo.findByEmailAndPassword(email, password);
+        return customerRepository.findCustomerByEmailAndPassword(email, password);
     }
-    public Customer getCustomerByEmail(String email){
-        return customerRepo.findByEmail(email);
+
+    /**
+     * Method to find customer by email
+     * @param email
+     * @return customer
+     */
+    public Customer getCustomerByEmail(String email) {
+        return customerRepository.findCustomerByEmail(email);
     }
 }

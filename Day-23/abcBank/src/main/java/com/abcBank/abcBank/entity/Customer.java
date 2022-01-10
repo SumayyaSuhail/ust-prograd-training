@@ -37,6 +37,14 @@ public class Customer {
         this.customerAddress = customerAddress;
         this.phoneNumber = phoneNumber;
     }
+    public Customer(String email, String customerName, String password, String customerAddress, String phoneNumber, Account account) {
+        this.email = email;
+        this.customerName = customerName;
+        this.password = password;
+        this.customerAddress = customerAddress;
+        this.phoneNumber = phoneNumber;
+        this.account=account;
+    }
 
     public Customer(String email, String password){
         this.email=email;

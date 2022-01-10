@@ -9,17 +9,32 @@ import org.springframework.stereotype.Service;
 @Service
 public class AccountService {
     @Autowired
-    private AccountRepository accountRepo;
+    private AccountRepository accountRepository;
 
+    /**
+     * Method to save account
+     * @param account
+     * @return account
+     */
     public Account saveAccount(Account account) {
-        return accountRepo.save(account);
+        return accountRepository.save(account);
     }
 
+    /**
+     * Method to find account by customerId
+     * @param customer
+     * @return account
+     */
     public Account getAccountByCustomerId(Customer customer) {
-        return accountRepo.findByCustomerId(customer);
+        return accountRepository.findAccountByCustomerId(customer);
     }
 
+    /**
+     * Method to find account by accountId
+     * @param accountId
+     * @return account
+     */
     public Account getAccountByAccountId(Long accountId) {
-        return accountRepo.findByAccountId(accountId);
+        return accountRepository.findAccountByAccountId(accountId);
     }
 }
