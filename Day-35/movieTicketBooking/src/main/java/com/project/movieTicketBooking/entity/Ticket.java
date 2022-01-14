@@ -3,6 +3,7 @@ package com.project.movieTicketBooking.entity;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+
 @Component
 @Entity
 public class Ticket {
@@ -12,7 +13,8 @@ public class Ticket {
     private Long seatId;
     @Column(name = "movieshowid")
     private Long movieShowId;
-    public Ticket(){
+
+    public Ticket() {
 
     }
 

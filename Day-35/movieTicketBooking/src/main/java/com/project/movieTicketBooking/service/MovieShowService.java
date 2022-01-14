@@ -10,11 +10,24 @@ public class MovieShowService {
     @Autowired
     private MovieShowRepository movieShowRepository;
 
+    /**
+     * Method to get Show by name and movieId
+     *
+     * @param movieId
+     * @param name
+     * @return MovieShow
+     */
     public MovieShow getShowByNameAndMovieId(Long movieId, String name) {
-        return movieShowRepository.findShowByNameAndMovieId(movieId,name);
+        return movieShowRepository.findShowByNameAndMovieId(movieId, name);
     }
 
-    public MovieShow getShowById(Long movieShowId){
+    /**
+     * Method to get Show by id
+     *
+     * @param movieShowId
+     * @return MovieShow
+     */
+    public MovieShow getShowById(Long movieShowId) {
         return movieShowRepository.findByMovieShowId(movieShowId);
     }
 }

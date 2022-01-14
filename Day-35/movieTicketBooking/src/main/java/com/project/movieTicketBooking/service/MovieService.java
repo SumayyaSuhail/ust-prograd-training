@@ -13,10 +13,22 @@ public class MovieService {
     @Autowired
     private MovieRepository movieRepository;
 
+    /**
+     * Method to get List<Movie> by movieDate
+     *
+     * @param date
+     * @return List<Movie>
+     */
     public List<Movie> getMoviesByDate(String date) {
         return movieRepository.findMoviesByDate(date);
     }
 
+    /**
+     * Method to get Movie by id
+     *
+     * @param movieId
+     * @return Movie
+     */
     public Movie getMoviesById(Long movieId) {
         return movieRepository.findByMovieId(movieId);
     }

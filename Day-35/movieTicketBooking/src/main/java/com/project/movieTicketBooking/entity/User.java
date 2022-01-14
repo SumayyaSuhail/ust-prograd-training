@@ -20,22 +20,17 @@ public class User {
     private String phoneNumber;
     @Column(nullable = false)
     private String password;
-    public User(){
+
+    public User() {
 
     }
-    public User(String email, String userName, String password, String phoneNumber){
-        this.email=email;
-        this.userName=userName;
-        this.password=password;
-        this.phoneNumber=phoneNumber;
+
+    public User(String email, String userName, String password, String phoneNumber) {
+        this.email = email;
+        this.userName = userName;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
     }
-//    public User(String email, String userName, String password, String phoneNumber, Ticket ticket){
-//        this.email=email;
-//        this.userName=userName;
-//        this.password=password;
-//        this.phoneNumber=phoneNumber;
-//        this.ticket=ticket;
-//    }
 
     public Long getUserId() {
         return userId;
@@ -77,11 +72,4 @@ public class User {
         this.password = password;
     }
 
-//    public Ticket getTicket() {
-//        return ticket;
-//    }
-//
-//    public void setTicket(Ticket ticket) {
-//        this.ticket = ticket;
-//    }
 }

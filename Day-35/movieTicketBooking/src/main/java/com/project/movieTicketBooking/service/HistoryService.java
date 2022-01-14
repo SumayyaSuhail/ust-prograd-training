@@ -12,10 +12,21 @@ public class HistoryService {
     @Autowired
     private HistoryRepository historyRepository;
 
-    public void saveHistory(History history){
+    /**
+     * Method to save History
+     *
+     * @param history
+     */
+    public void saveHistory(History history) {
         historyRepository.save(history);
     }
 
+    /**
+     * Method to get List<History> by userName
+     *
+     * @param userName
+     * @return List<History>
+     */
     public List<History> getHistoryByUserName(String userName) {
         return historyRepository.findHistoryByUserId(userName);
     }

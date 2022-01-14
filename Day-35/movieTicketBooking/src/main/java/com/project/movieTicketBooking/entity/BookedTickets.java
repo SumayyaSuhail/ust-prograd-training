@@ -16,13 +16,15 @@ public class BookedTickets {
     private Long seatId;
     @Column(name = "userId")
     private Long userId;
-    public BookedTickets(){
+
+    public BookedTickets() {
 
     }
-    public BookedTickets(Long movieShowId, Long seatId, Long userId){
-        this.movieShowId=movieShowId;
-        this.seatId=seatId;
-        this.userId=userId;
+
+    public BookedTickets(Long movieShowId, Long seatId, Long userId) {
+        this.movieShowId = movieShowId;
+        this.seatId = seatId;
+        this.userId = userId;
     }
 
     public Long getId() {

@@ -10,16 +10,42 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public void saveUser(User user){
+    /**
+     * Method to save User
+     *
+     * @param user
+     */
+    public void saveUser(User user) {
         userRepository.save(user);
     }
-    public User getUserByEmailAndPassword(String email, String password){
+
+    /**
+     * Method to get User by email and password
+     *
+     * @param email
+     * @param password
+     * @return User
+     */
+    public User getUserByEmailAndPassword(String email, String password) {
         return userRepository.findUserByEmailAndPassword(email, password);
     }
-    public User getUserByEmail(String email){
+
+    /**
+     * Method to get User by email
+     *
+     * @param email
+     * @return User
+     */
+    public User getUserByEmail(String email) {
         return userRepository.findUserByEmail(email);
     }
 
+    /**
+     * Method to get User by Id
+     *
+     * @param userId
+     * @return User
+     */
     public User getUserById(Long userId) {
         return userRepository.findUserByUserId(userId);
     }

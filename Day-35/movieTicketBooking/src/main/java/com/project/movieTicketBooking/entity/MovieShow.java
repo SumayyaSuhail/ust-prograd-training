@@ -19,9 +19,10 @@ public class MovieShow {
     @Column(name = "movieid")
     private Long movieId;
 
-    public MovieShow(){
+    public MovieShow() {
 
     }
+
     public Long getId() {
         return id;
     }
