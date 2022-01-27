@@ -1,0 +1,32 @@
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner scanner=new Scanner(System.in);
+        int num1 = scanner.nextInt();
+        while(num1>0){
+            int num = scanner.nextInt();
+            int sum=0;
+            while(sum<1){
+                sum=Sum(num);
+                num=num+1;
+            }
+            System.out.println(num-1);
+            num1--;
+        }
+    }
+    public static int Sum(int n){
+        int rem;
+        int sum=0;
+        while(n>0){
+            rem=n%10;
+            sum=sum+rem;
+            n=n/10;
+        }
+        if(sum%4==0){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+}
